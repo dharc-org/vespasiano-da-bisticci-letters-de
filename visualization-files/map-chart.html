@@ -1,0 +1,74 @@
+<!-- Code from d3-graph-gallery.com -->
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js and the geo projection plugin -->
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+<!-- Load Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+
+<script src="http://zverik.github.io/leaflet-grayscale/TileLayer.Grayscale.js"></script>
+
+<!-- Create an element where the map will take place -->
+<div id="mapid"></div>
+
+<style>
+#mapid { 
+  height: 600px;
+  width: 1000px
+  }
+</style>
+
+
+<script>
+// mapid is the id of the div where the map will appear
+var map = L
+  .map('mapid')
+  .setView([42, 13], 6);   // center position + zoom
+
+// Add a tile to the map = a background. Comes from OpenStreetmap
+L.tileLayer.grayscale(
+    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+    maxZoom: 15,
+    }).addTo(map);
+
+// Add a svg layer to the map
+L.svg().addTo(map);
+
+// Create data for circles:
+
+var marker_florence = L.marker([43.768803, 11.254186]).addTo(map);
+marker_florence.bindPopup("Number of letters: 17<br><br>2 - Vespasiano a Filippo Podocataro<br>3 - Vespasiano a Filippo Podocataro<br>4 - Vespasiano a Iohannes Caldarifex de Monthabur<br>5 - Vespasiano a William Gray<br>6 - Giannozzo Manetti a Vespasiano<br>17 - Vespasiano a Piero de' Medici<br>18 - Vespasiano a Piero de' Medici<br>19 - Vespasiano a Piero de' Medici<br>20 - Vespasiano a Jean Jouffroy<br>25 - Vespasiano ad Alfonso Fernandez de Palencia<br>26 - Vespasiano a Cosimo de' Medici<br>30 - Vespasiano ad Alfonso d'Aragona<br>31 - Vespasiano a Lorenzo de' Medici<br>32 - Vespasiano a Lorenzo de' Medici<br>36 - Vespasiano a Caterina Portinari<br>37 - Vespasiano ad Alfonso d'Aragona<br>39 - Vespasiano ad Alfonso Strozzi");
+
+var marker_montegufoni = L.marker([43.670097, 11.089152]).addTo(map);
+marker_montegufoni.bindPopup("Number of letters: 2<br><br>1 - Donato Acciaiuoli a Vespasiano<br>41 - Iacopo Ammannati Piccolomini a Vespasiano");
+
+var marker_bologna = L.marker([44.4938100, 11.3387500]).addTo(map);
+marker_bologna.bindPopup("Number of letters: 2<br><br>9 - Niccolò Perotti a Vespasiano<br>10 - Niccolò Perotti a Vespasiano");
+
+var marker_rome = L.marker([41.902714, 12.496267]).addTo(map);
+marker_rome.bindPopup("Number of letters: 3<br><br>11 - Giannozzo Manetti a Vespasiano<br>12 - Giannozzo Manetti a Vespasiano<br>22 - Piero Acciaiuoli a Vespasiano");
+
+var marker_naples = L.marker([40.8563100, 14.2464100]).addTo(map);
+marker_naples.bindPopup("Number of letters: 6<br><br>8 - Giannozzo Manetti a Vespasiano<br>13 - Giannozzo Manetti a Vespasiano<br>14 - Giannozzo Manetti a Vespasiano<br>15 - Giannozzo Manetti a Vespasiano<br>16 - Giannozzo Manetti a Vespasiano<br>27 - Ferdinando d'Aragona a Vespasiano");
+
+var marker_poppi = L.marker([43.722838, 11.766153]).addTo(map);
+marker_poppi.bindPopup("Number of letters: 1<br><br>21 - Donato Acciaiuoli a Vespasiano");
+
+var marker_aversa = L.marker([40.973181, 14.207505]).addTo(map);
+marker_aversa.bindPopup("Number of letters: 1<br><br>28 - Ferdinando d'Aragona a Vespasiano");
+
+var marker_pozzuoli = L.marker([40.822301, 14.119794]).addTo(map);
+marker_pozzuoli.bindPopup("Number of letters: 1<br><br>29 - Ferdinando d'Aragona a Vespasiano");
+
+var marker_antella = L.marker([43.727192, 11.322583]).addTo(map);
+marker_antella.bindPopup("Number of letters: 6<br><br>33 - Vespasiano a Leonardo di Giovanni Tolosani da Colle<br>34 - Vespasiano a Leonardo di Giovanni Tolosani da Colle<br>35 - Giovanfrancesco Mazinghi a Vespasiano<br>38 - Vespasiano a Pierfilippo Pandolfini<br>40 - Vespasiano a Giovanni Pandolfini<br>42 - Vespasiano a Pierfilippo Pandolfini");
+
+var marker_vacciano = L.marker([43.735625, 11.278835]).addTo(map);
+marker_vacciano.bindPopup("Number of letters: 3<br><br>7 - Giannozzo Manetti a Vespasiano<br>44 - Agnolo Manetti a Vespasiano<br>45 - Agnolo Manetti a Vespasiano");
+
+</script>

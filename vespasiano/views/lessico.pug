@@ -1,0 +1,17 @@
+extends indices-layout
+
+block intro
+  p Il lessico tecnico della copia e della scrittura manoscritta è stato oggetto di annotazione al fine di estrarre un primo vocabolario tematico e la costruzione di un thesaurus. 
+  p Sono state individuate alcune macro-aree semantiche: la miniatura (illumination), la legatura (binding), la scrittura (writing), il formato (format), il supporto (support), i costi (cost) e il lessico filologico (philology). Non sono riportati i termini di uso comune, che pure appaiono nelle lettere, come: volume, vendere, comprare, testo, libri. 
+  p Per istituire altre relazioni semantiche si è poi stabilito un legame fra il termine e il codice a cui si riferisce.
+
+block index-table
+  for x in lexicon
+       section.dropDown
+        h3= x.TERM
+        p= 'AREA: ' + x.AREA
+        p= 'CODICE: ' + x.CODEX
+        p LETTERE: 
+         for y in x.LETTERS
+           span(class='letter html')
+            a(href= y)

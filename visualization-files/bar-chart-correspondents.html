@@ -1,0 +1,18 @@
+<html>
+<div id="chartContainer">
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+  <script type="text/javascript">
+    var svg = dimple.newSvg("#chartContainer", 930, 500);
+    d3.json("correspondents.json", function (data) {
+      var myChart = new dimple.chart(svg, data);
+      myChart.setBounds(300, 30, 400, 400)
+      myChart.addMeasureAxis("x", "Number of letters");
+      var y = myChart.addCategoryAxis("y", "Correspondent");
+      y.addOrderRule("Correspondent", "false");
+      myChart.addSeries(null, dimple.plot.bar);
+      myChart.draw();
+    });
+  </script>
+</div>
+</html>

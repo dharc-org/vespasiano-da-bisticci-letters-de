@@ -1,0 +1,19 @@
+extends indices-layout
+
+block intro
+  p Le lettere sono state numerate progressivamente per data. Lettere che hanno una datazione compresa in un arco cronologico esteso e determinabile sono state posizionate in fondo all'elenco. Stesso trattamento è stato riservato alle lettere per le quali non è certa l'attribuzione cronica [?]. 
+
+block index-table
+  for x in letters
+        section.dropDown
+          h3= x.ITEM
+          p.html
+           a(href=x.HTML) vai all'edizione digitale
+          p= 'SEGNATURA: ' + x.SHELFMARK
+          p= 'MITTENTE: ' + x.SENDER
+          p= 'DESTINATARIO: ' + x.ADDRESSEE
+          p= 'DATA CRONICA: ' + x.DATE
+          p= 'DATA TOPICA: ' + x.PLACE
+          p IMMAGINI
+          for y in x.ICONS
+              img(src=y)

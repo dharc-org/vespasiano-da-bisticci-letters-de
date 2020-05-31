@@ -1,0 +1,9 @@
+extends static-layout
+
+block main-content
+  script(type='text/javascript').
+    var local_data =!{JSON.stringify(people)};
+  block letter
+   section.content
+    section.letterContainer!= text
+  block notes

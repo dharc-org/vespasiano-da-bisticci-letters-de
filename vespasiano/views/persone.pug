@@ -1,0 +1,26 @@
+extends indices-layout
+
+block intro
+  p I nomi delle persone sono stati normalizzati secondo le specifiche VIAF al fine di garantire interscambio fra descrizioni d'autorità. Il controllo d'autorità è stato effettuato anche su: BISLAM, BNF, GND, INSI, LCCN, SBN, SELIBR e WorldCat. 
+  p Si sono adottate le forme attestate in letteratura laddove non è stato possibile rilevare sui repertori la forma normalizzata. 
+  p Si è scelto di indicizzare principalmente i nomi di personaggi coevi, con lo scopo di ottenere un primo censimento finalizzato alla realizzazione di una prosopografia di umanisti. 
+
+block index-table
+ for x in people
+  section.dropDown
+   if x.LABEL
+    h3= x.LABEL
+   else 
+    h3 ?
+   section.data
+    p AUTHORITY CONTROL:  
+    for y in x.SAMEAS
+      p
+       a(href=y.value)= y.value
+    p LETTERE: 
+     for w,i in x.LETTERS
+       span(class='letter html')
+        a(href=w)
+    p FORME ATTESTATE: 
+     for z,j in x.FORMS
+      span= '- ' + z + ' '

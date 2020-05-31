@@ -1,0 +1,28 @@
+extends indices-layout
+
+block intro
+  p I codici, gli esemplari manoscritti prodotti dalla scuola di Vespasiano. Fra [] le integrazioni necessarie a identificare, quando possibile, autore e/o opera. 
+  p Si è provveduto a segnalare se i codici sono stati richiesti o proposti a Vespasiano, menzionati nella lettera o realizzati dalla scuola (al fine di stabilire una possibile tassonomia di relazioni fra codice e persona). 
+  p Quando riconosciuti in esemplari tutt'oggi conservati presso le biblioteche si è fornita la segnatura.
+
+block index-table
+    for x in codices
+      section.dropDown
+        h3= x.TITLE
+        p= 'OPERA: ' + x.WORK
+        p= 'AUTHORITY CONTROL OPERA: ' 
+         if x.AUTHORITYCONTROL
+          a(href=x.AUTHORITYCONTROL.value)= x.AUTHORITYCONTROL.value
+         else
+          span -
+        p= 'AUTORE OPERA: ' + x.AUTHOR
+        p= 'COMMISSIONE: ' + x.COMMISSION
+        p= 'SEGNATURA: '
+         if x.SHELFMARK
+          span= x.SHELFMARK
+         else
+          span -
+        p LETTERE: 
+         for y,i in x.LETTERS
+          span(class='letter html')
+           a(href=y[i])  
