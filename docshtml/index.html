@@ -1,0 +1,136 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Vespasiano da Bisticci’s Letters &#8212; VdB  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Methodology" href="methodology.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="methodology.html">Methodology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure-and-components.html">Structure and components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Visualization</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="methodology.html" title="next chapter">Methodology</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vespasiano-da-bisticci-s-letters">
+<h1>Vespasiano da Bisticci’s Letters<a class="headerlink" href="#vespasiano-da-bisticci-s-letters" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Vespasiano da Bisticci’s <em>Letters</em> are a series of manuscript letters sent to and received by Vespasiano da Bisticci (1421–1498), an Italian humanist and librarian, over a time period spanning from 1444 to 1497. Their content focuses mostly on manuscripts and codex trade with other notable people of that time. From the letters it is possible to learn many relevant features of these manuscripts: materials, copyists, costs, but also names of latin, greek and humanistic authors and texts. Their physical copies are currently held in different repositories (archives and libraries). They arrived under different physical supports, and were not gathered in an existing collection.</p>
+<p>A <strong>semantic digital edition</strong> of the Letters has been produced in order to facilitate the navigation, study and conservation of such documents, as well as to contextualize them in a semantically-rich and metatextual framework. Overall, many data elements have been used to formulate descriptive paratextual statements about the letters in the annotation process that brought the semantic digital edition to life.</p>
+<p>The <strong>HTML version</strong> of the digital edition of the Letters can be found here: <a class="reference external" href="http://vespasianodabisticciletters.unibo.it/">http://vespasianodabisticciletters.unibo.it/</a>.</p>
+<p>The <strong>RDF-based, semantic digital edition</strong> of the Letters can be found here: <a class="reference external" href="http://projects.dharc.unibo.it/vespasiano/">http://projects.dharc.unibo.it/vespasiano/</a>. It can be set up locally by following the instructions that can be found in the rest of this page.</p>
+<p>The rest of the documentation is organized as follows:</p>
+<ul class="simple">
+<li><strong>Methodology</strong>: this section explains in detail the methodology used to develop the digital edition, which comprises the <strong>development workflow</strong> and the list of <strong>reused models</strong>;</li>
+<li><strong>Structure and components</strong>: this section explains in detail the structure of the RDF graph by dividing it into <strong>a series of smaller models</strong>;</li>
+<li><strong>Visualization</strong>: this section illustrates some examples of SPARQL queries on the graph, rendered as <strong>visualization charts</strong>.</li>
+</ul>
+</div>
+<div class="section" id="how-to-set-up-the-semantic-digital-edition">
+<h2>How to set up the semantic digital edition<a class="headerlink" href="#how-to-set-up-the-semantic-digital-edition" title="Permalink to this headline">¶</a></h2>
+<p>As it is, the data can be processed through <strong>node.js</strong> (<a class="reference external" href="https://nodejs.org/en/">https://nodejs.org/en/</a>), an open source server environment that allows to generate dynamic page content and manipulate data in the graph through an event-driven, asyncronous management of operations.</p>
+<p>The data can be queried via <strong>rdflib</strong>, a library for working with RDF that allows one to read and write code in RDF/XML and other serializations (such as Turtle and N3).
+This library also allows one to make SPARQL queries.</p>
+<p>In order to launch the application locally, you will need a web server (e.g. XAMPP, <a class="reference external" href="https://www.apachefriends.org/it/index.html">https://www.apachefriends.org/it/index.html</a>), <code class="docutils literal notranslate"><span class="pre">node.js</span></code> and the directory <code class="docutils literal notranslate"><span class="pre">node_modules</span></code> downloaded on your machine.</p>
+<p><strong>XAMPP</strong>, which includes the Apache web server, can be used to set up a server on a computer.
+You can download XAMPP here: <a class="reference external" href="https://www.apachefriends.org/download.html">https://www.apachefriends.org/download.html</a>.
+Run <code class="docutils literal notranslate"><span class="pre">xampp-control.exe</span></code> as administrator.
+Click on the <em>Start</em> button next to the <em>Apache</em> module.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Do <em>not</em> install XAMPP under <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">files</span></code> on Windows 10, because it may cause problems with permissions later. Put it in root (<code class="docutils literal notranslate"><span class="pre">C:\</span></code>) instead.</p>
+</div>
+<p>Now you may open a web browser and go to <code class="docutils literal notranslate"><span class="pre">http://localhost:80</span></code>, or alternatively just <code class="docutils literal notranslate"><span class="pre">http://localhost</span></code>. You are now in contact with the web server you just installed and started.
+Locate the <code class="docutils literal notranslate"><span class="pre">htdocs</span></code> folder of the directory in which XAMPP was installed.</p>
+<p>Run the command prompt and move to the folder containing the <code class="docutils literal notranslate"><span class="pre">vespasiano</span></code>. Then, launch <code class="docutils literal notranslate"><span class="pre">app.js</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">node</span> <span class="n">app</span><span class="o">.</span><span class="n">js</span>
+</pre></div>
+</div>
+<p>You will be able to visualize the digital edition on any browser at <code class="docutils literal notranslate"><span class="pre">localhost:80</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">On some computers, another server may already be listening to <code class="docutils literal notranslate"><span class="pre">port</span> <span class="pre">80</span></code>. If so, you may need to terminate that server or move the XAMPP server to another port.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, Francesca Tomasi, Marilena Daquino, Sebastian Barzaghi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
