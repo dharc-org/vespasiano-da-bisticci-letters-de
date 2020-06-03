@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Vespasiano da Bisticci's Letters - Documentation</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Vespasiano da Bisticci, <em>Lettere</em></h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p style="text-align:center">A semantic digital edition</p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                    <ul class="collapse show list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#overview">Overview</a>
+                        </li>
+                        <li>
+                            <a href="#local-setup">Local setup</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#methodologySubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Methodology</a>
+                    <ul class="collapse list-unstyled" id="methodologySubmenu">
+                        <li>
+                            <a href="methodology.html#workflow">Workflow</a>
+                        </li>
+                        <ul>
+                            <li>
+                                <a href="methodology.html#markup-model">Markup model</a>
+                            </li>
+                            <li>
+                                <a href="methodology.html#html-conversion">HTML conversion</a>
+                            </li>
+                            <li>
+                                <a href="methodology.html#rdf-conversion">RDF conversion</a>
+                            </li>
+                        </ul>
+                        <li>
+                            <a href="methodology.html#reused-models">Reused models</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#componentsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Components</a>
+                    <ul class="collapse list-unstyled" id="componentsSubmenu">
+                        <li>
+                            <a href="components.html#letters">The Letters</a>
+                        </li>
+                        <ul>
+                            <li>
+                                <a href="components.html#original-exemplars">The original exemplars</a>
+                            </li>
+                            <li>
+                                <a href="components.html#edited-letters">The edited letters</a>
+                            </li>
+                        </ul>
+                        <li>
+                            <a href="components.html#editions">The editions</a>
+                        </li>
+                        <li>
+                            <a href="components.html#roles-and-interpretations">Roles and interpretations</a>
+                        </li>
+                        <li>
+                            <a href="components.html#codices">The codices</a>
+                        </li>
+                        <li>
+                            <a href="components.html#people">The people</a>
+                        </li>
+                        <li>
+                            <a href="components.html#repositories">The repositories</a>
+                        </li>
+                        <li>
+                            <a href="components.html#text">The text</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="visualization.html">Visualization</a>
+                </li>
+            </ul>
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="http://projects.dharc.unibo.it/vespasiano/" class="article">Semantic digital edition</a>
+                </li>
+                <li>
+                    <a href="https://github.com/dharc-org/vespasiano-da-bisticci-letters-de" class="article">GitHub repository</a>
+                </li>
+                <li>
+                    <a href="downloads.html">Downloads</a>
+                </li>
+                <li>
+                    <a href="credits.html">Credits</a>
+                </li>
+                <li style="text-align:center">
+                    &copy; 2020 /DH.arc
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <h2 id="overview">Overview</h2>
+            <p>Vespasiano da Bisticci’s <em>Letters</em> are a series of manuscript letters that were sent to and received by <em>Vespasiano da Bisticci</em> (1421–1498), an Italian humanist and librarian, over a time period spanning from 1444 to 1497. Their content focuses mostly on manuscripts and codex trade with other notable people of that time. From the letters it is possible to learn many relevant features of these manuscripts: materials, copyists, costs, but also names of latin, greek and humanistic authors and texts.</p>
+            <p>A <a href="http://vespasianodabisticciletters.unibo.it/">digital edition</a> of the Letters has been initially developed to publish them on the Web.</p>
+            <p>Subsequently, a <a href="http://projects.dharc.unibo.it/vespasiano/">semantic digital edition</a> of the Letters has been developed in order to facilitate the navigation, study and conservation of such documents, as well as to contextualize them in a semantically-rich and metatextual framework.</p>
+            <p>The rest of the documentation is organized as follows:</p>
+            <ul>
+                <li><a href="methodology.html">Methodology</a>: this section explains in detail the methodology used to develop the semantic digital edition, which comprises the <strong>development workflow</strong> and the list of <strong>reused models</strong>;</li>
+                <li><a href="components.html">Components</a>: this section explains in detail the structure of the RDF graph by dividing it into <strong>a series of smaller models</strong>;</li>
+                <li><a href="visualization.html">Visualization</a>: this section illustrates some examples of <strong>graphs and charts</strong> to visualize certain aspects of the edition.</li>
+            </ul>
+                            
+            <div class="line"></div>
+
+            <h2 id="local-setup">Local setup</h2>
+            <p>The semantic digital edition can be processed through <a href="https://nodejs.org/en/">node.js</a>, an open source server environment that allows to generate dynamic page content and manipulate data through event-driven, asyncronous management of operations.</p>
+            <p>The semantic data can be queried via <a href="https://github.com/linkeddata/rdflib.js/">rdflib.js</a>, a library for working with RDF that allows one to read and write code in RDF/XML and other serializations (such as Turtle and N3). This library also allows one to make SPARQL queries.</p>
+            <p>In order to launch the application locally, you will need a web server (e.g. <a href="https://www.apachefriends.org/it/index.html">XAMPP</a>) and node.js.</p>
+            <p>XAMPP, which includes the Apache web server, can be used to set up a server on a computer. You can download XAMPP <a href="https://www.apachefriends.org/download.html">here</a>. Run <code>xampp-control.exe</code> as administrator. Click on the Start button next to the Apache module.</p>
+
+            <div class="alert alert-warning">
+                <strong>Note</strong>: do not install XAMPP under C:\Program files on Windows 10, because it may cause problems with permissions later. Put it in root (C:\) instead.
+            </div>
+
+            <p>Now you may open a web browser and go to <code>http://localhost:80</code> , or alternatively just <code>http://localhost</code>. You are now in contact with the web server you just installed and started. Locate the <code>htdocs</code> folder of the directory in which XAMPP was installed. Run the command prompt and move to the folder containing the <code>vespasiano</code> repository. Then, launch <code>app.js</code>:</p>
+            
+            <pre>>> node app.js</pre>
+
+            <p>You will be able to visualize the digital edition on any browser at <code>localhost:80</code>.</p>
+
+            <div class="alert alert-warning">
+                <strong>Note</strong>: on some computers, another server may already be listening to <code>port 80</code>. If so, you may need to terminate that server or move the XAMPP server to another port.
+            </div>
+
+            <footer class="pt-4 my-md-5 pt-md-5 border-top">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <h5><b>About</b></h5>
+                        <span class="text-muted">This work is part of the <b>Semantic Digital Edition of Vespasiano da Bisticci’s Letters</b>, a project maintained at the Digital Humanities Advanced Research Centre (<a href="https://centri.unibo.it/dharc/en">/DH.arc</a>) at the University of Bologna, Italy.</span>
+                      </div>
+                      <div class="col-md-6">
+                        <h5><b>Contacts</b></h5>
+                        <ul class="list-unstyled text-small">
+                          <li>University of Bologna</li>
+                          <li>Department of Classical Philology and Italian Studies (<a href="https://ficlit.unibo.it/it">FICLIT</a>)</li>
+                          <li>Via Zamboni 32, 40126 Bologna, Italia</li>
+                          <li>Email: <a href="mailto:dharc@live.unibo.it">dharc@live.unibo.it</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12" style="text-align:center">
+                        <span class="d-block mb-3 text-muted">Powered by: <a href="https://getbootstrap.com/">Bootstrap</a>, <a href="https://essepuntato.it/graffoo/">Graffoo</a>, <a href="https://github.com/jgraph/drawio">diagrams.net</a>, <a href="https://d3js.org/">D3.js</a>, <a href="https://c3js.org/">C3.js</a>, <a href="http://dimplejs.org/index.html">dimple.js</a>, <a href="https://leafletjs.com/">Leaflet</a></span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12" style="text-align:center">
+                            <span class="d-block mb-3 text-muted">&copy; 2020 Copyright: <a href="https://centri.unibo.it/dharc/en">/DH.arc</a> | DOI: 10.6092/unibo/vespasianodabisticciletters | <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+                      </div>
+                    </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+
+</html>

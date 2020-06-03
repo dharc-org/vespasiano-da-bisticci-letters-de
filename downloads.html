@@ -1,0 +1,239 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+        <title>Vespasiano da Bisticci's Letters - Documentation</title>
+    
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="style.css">
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    
+        <!-- Font Awesome JS -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Vespasiano da Bisticci, <em>Lettere</em></h3>
+                </div>
+    
+                <ul class="list-unstyled components">
+                    <p style="text-align:center">A semantic digital edition</p>
+                    <li>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="index.html#overview">Overview</a>
+                            </li>
+                            <li>
+                                <a href="index.html#local-setup">Local setup</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#methodologySubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Methodology</a>
+                        <ul class="collapse list-unstyled" id="methodologySubmenu">
+                            <li>
+                                <a href="methodology.html#workflow">Workflow</a>
+                            </li>
+                            <ul>
+                                <li>
+                                    <a href="methodology.html#markup-model">Markup model</a>
+                                </li>
+                                <li>
+                                    <a href="methodology.html#html-conversion">HTML conversion</a>
+                                </li>
+                                <li>
+                                    <a href="methodology.html#rdf-conversion">RDF conversion</a>
+                                </li>
+                            </ul>
+                            <li>
+                                <a href="methodology.html#reused-models">Reused models</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#componentsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Components</a>
+                        <ul class="collapse list-unstyled" id="componentsSubmenu">
+                            <li>
+                                <a href="components.html#letters">The Letters</a>
+                            </li>
+                            <ul>
+                                <li>
+                                    <a href="components.html#original-exemplars">The original exemplars</a>
+                                </li>
+                                <li>
+                                    <a href="components.html#edited-letters">The edited letters</a>
+                                </li>
+                            </ul>
+                            <li>
+                                <a href="components.html#editions">The editions</a>
+                            </li>
+                            <li>
+                                <a href="components.html#roles-and-interpretations">Roles and interpretations</a>
+                            </li>
+                            <li>
+                                <a href="components.html#codices">The codices</a>
+                            </li>
+                            <li>
+                                <a href="components.html#people">The people</a>
+                            </li>
+                            <li>
+                                <a href="components.html#repositories">The repositories</a>
+                            </li>
+                            <li>
+                                <a href="components.html#text">The text</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="visualization.html">Visualization</a>
+                    </li>
+                </ul>
+                <ul class="list-unstyled CTAs">
+                    <li>
+                        <a href="http://projects.dharc.unibo.it/vespasiano/" class="article">Semantic digital edition</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/dharc-org/vespasiano-da-bisticci-letters-de" class="article">GitHub repository</a>
+                    </li>
+                    <li class="active">
+                        <a href="downloads.html">Downloads</a>
+                    </li>
+                    <li>
+                        <a href="credits.html">Credits</a>
+                    </li>
+                    <li style="text-align:center">
+                        &copy; 2020 /DH.arc
+                    </li>
+                </ul>
+            </nav>
+    
+            <!-- Page Content  -->
+            <div id="content">
+    
+                <h2 id="downloads">Downloads</h2>
+                                
+                <div class="line"></div>
+
+                <h3>Dataset</h3>
+
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col"><strong>Format</strong></th>
+                            <th scope="col"><strong>Download</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bulk (zipped)</td>
+                            <td><a href="downloads/vdbRdf.zip">vdbRdf.zip</a></td>
+                        </tr>
+                        <tr>
+                            <td>JSON</td>
+                            <td><a href="downloads/vdbRdf.json">vdbRdf.json</a></td>
+                        </tr>
+                        <tr>
+                            <td>N3</td>
+                            <td><a href="downloads/vdbRdf.nt">vdbRdf.nt</a></td>
+                        </tr>
+                        <tr>
+                            <td>RDF/XML</td>
+                            <td><a href="downloads/vdbRdf.rdf">vdbRdf.rdf</a></td>
+                        </tr>
+                        <tr>
+                            <td>Turtle</td>
+                            <td><a href="downloads/vdbRdf.ttl">vdbRdf.ttl</a></td>
+                        </tr>                    
+                        <tr>
+                            <td>XML</td>
+                            <td><a href="downloads/vdbRdf.xml">vdbRdf.xml</a></td>
+                        </tr>                    
+                    </tbody>
+                </table>
+
+                <div class="line"></div>
+
+                <h3>XSLT stylesheet</h3>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col"><strong>Format</strong></th>
+                            <th scope="col"><strong>Download</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>XSLT</td>
+                            <td><a href="xslt/vdbToRdf.xsl">vdbToRdf.xsl</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+    
+                <footer class="pt-4 my-md-5 pt-md-5 border-top">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <h5><b>About</b></h5>
+                            <span class="text-muted">This work is part of the <b>Semantic Digital Edition of Vespasiano da Bisticci’s Letters</b>, a project maintained at the Digital Humanities Advanced Research Centre (<a href="https://centri.unibo.it/dharc/en">/DH.arc</a>) at the University of Bologna, Italy.</span>
+                          </div>
+                          <div class="col-md-6">
+                            <h5><b>Contacts</b></h5>
+                            <ul class="list-unstyled text-small">
+                              <li>University of Bologna</li>
+                              <li>Department of Classical Philology and Italian Studies (<a href="https://ficlit.unibo.it/it">FICLIT</a>)</li>
+                              <li>Via Zamboni 32, 40126 Bologna, Italia</li>
+                              <li>Email: <a href="mailto:dharc@live.unibo.it">dharc@live.unibo.it</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12" style="text-align:center">
+                            <span class="d-block mb-3 text-muted">Powered by: <a href="https://getbootstrap.com/">Bootstrap</a>, <a href="https://essepuntato.it/graffoo/">Graffoo</a>, <a href="https://github.com/jgraph/drawio">diagrams.net</a>, <a href="https://d3js.org/">D3.js</a>, <a href="https://c3js.org/">C3.js</a>, <a href="http://dimplejs.org/index.html">dimple.js</a>, <a href="https://leafletjs.com/">Leaflet</a></span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12" style="text-align:center">
+                                <span class="d-block mb-3 text-muted">&copy; 2020 Copyright: <a href="https://centri.unibo.it/dharc/en">/DH.arc</a> | DOI: 10.6092/unibo/vespasianodabisticciletters | <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+                          </div>
+                        </div>
+                      </footer>
+            </div>
+        </div>
+    
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <!-- Popper.JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#sidebar").mCustomScrollbar({
+                    theme: "minimal"
+                });
+    
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar, #content').toggleClass('active');
+                    $('.collapse.in').toggleClass('in');
+                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                });
+            });
+        </script>
+    </body>
+</html>
