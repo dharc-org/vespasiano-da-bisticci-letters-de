@@ -1,0 +1,108 @@
+/* axis */
+
+.axis { /* axis labels */
+    fill: black;
+    font-size: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.axis line{ /* axis tick marks */
+    stroke-width : 1;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis path { /* axis line */
+    stroke-width : 1;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+/* timeline band */
+
+.band { /* band background */
+    fill: white;
+}
+
+/* labels */
+
+.bandLabel {
+    fill: #F0F0F0;
+    font-size: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.bandMinMaxLabel {
+    fill: black;
+    font-size: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.bandMidLabel {
+    fill: black;
+    font-size: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* brush */
+
+.brush .extent {
+    fill: gray;
+    fill-opacity: .4;
+}
+
+.chart {
+    fill: rgb(255, 255, 255);
+}
+
+.interval {
+    fill: lightblue;
+    opacity: .7;
+    stroke-width: 6;
+    cursor : default;
+    pointer-events: true;
+}
+
+.instant {
+    fill: rgb(6, 191, 253);
+    stroke-width: 6;
+    cursor : default;
+    /*pointer-events: true;*/
+}
+
+.instantLabel {
+    fill : black;
+    font-size: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    shape-rendering: crispEdges;
+}
+
+.intervalLabel {
+    fill : black;
+    font-size: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    shape-rendering: crispEdges;
+}
+
+.item {
+    cursor : default;
+    pointer-events: auto;
+}
+
+.tooltip {
+    width: auto;
+    position: absolute;
+    visibility: hidden;
+    color : black;
+    cursor:default;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid;
+    padding: 4px;
+    shape-rendering: crispEdges;
+    pointer-events: none;
+}
+
