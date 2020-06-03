@@ -1,0 +1,247 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+        <title>Vespasiano da Bisticci's Letters - Documentation</title>
+    
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="style.css">
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    
+        <!-- Font Awesome JS -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Vespasiano da Bisticci, <em>Lettere</em></h3>
+                </div>
+    
+                <ul class="list-unstyled components">
+                    <p style="text-align:center">A semantic digital edition</p>
+                    <li>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="index.html#overview">Overview</a>
+                            </li>
+                            <li>
+                                <a href="index.html#local-setup">Local setup</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#methodologySubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Methodology</a>
+                        <ul class="collapse list-unstyled" id="methodologySubmenu">
+                            <li>
+                                <a href="methodology.html#workflow">Workflow</a>
+                            </li>
+                            <ul>
+                                <li>
+                                    <a href="methodology.html#markup-model">Markup model</a>
+                                </li>
+                                <li>
+                                    <a href="methodology.html#html-conversion">HTML conversion</a>
+                                </li>
+                                <li>
+                                    <a href="methodology.html#rdf-conversion">RDF conversion</a>
+                                </li>
+                            </ul>
+                            <li>
+                                <a href="methodology.html#reused-models">Reused models</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#componentsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Components</a>
+                        <ul class="collapse list-unstyled" id="componentsSubmenu">
+                            <li>
+                                <a href="components.html#letters">The Letters</a>
+                            </li>
+                            <ul>
+                                <li>
+                                    <a href="components.html#original-exemplars">The original exemplars</a>
+                                </li>
+                                <li>
+                                    <a href="components.html#edited-letters">The edited letters</a>
+                                </li>
+                            </ul>
+                            <li>
+                                <a href="components.html#editions">The editions</a>
+                            </li>
+                            <li>
+                                <a href="components.html#roles-and-interpretations">Roles and interpretations</a>
+                            </li>
+                            <li>
+                                <a href="components.html#codices">The codices</a>
+                            </li>
+                            <li>
+                                <a href="components.html#people">The people</a>
+                            </li>
+                            <li>
+                                <a href="components.html#repositories">The repositories</a>
+                            </li>
+                            <li>
+                                <a href="components.html#text">The text</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="visualization.html">Visualization</a>
+                    </li>
+                </ul>
+    
+                <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="http://projects.dharc.unibo.it/vespasiano/" class="article">Semantic digital edition</a>
+                </li>
+                <li>
+                    <a href="https://github.com/dharc-org/vespasiano-da-bisticci-letters-de" class="article">GitHub repository</a>
+                </li>
+                <li>
+                    <a href="downloads.html">Downloads</a>
+                </li>
+                    <li>
+                        <a href="credits.html">Credits</a>
+                    </li>
+                    <li style="text-align:center">
+                        &copy; 2020 /DH.arc
+                    </li>
+                </ul>
+            </nav>
+    
+            <!-- Page Content  -->
+            <div id="content">
+    
+                <h2 id="visualizing">Visualizing the Letters</h2>
+                <p>During the annotation process that brought the semantic digital edition to life, many data elements have been used to formulate descriptive paratextual statements about the Letters.</p>
+                <p>There are many alternative ways to explore semantic-rich data, each with varying levels of effectiveness. A flat index, albeit useful as a starting point to display and navigate data more efficiently, tends to collapse the depth of the data itself and to hide its most important characteristics. Instead, it may be more effective to adopt an approach based on multiple visualization strategies which support a much better sense-making of data through the use of charts and other visual elements that provide an accessible way to see and understand correlations and patterns in data.</p>
+
+                <div class="line"></div>
+
+                <h3><em>What</em>: the lexical terms</h3>
+                <p>The <b>pie chart</b> and the <b>donut chart</b> are charts that convey a general idea of data that sum up to a total. They are efficient for displaying the relative frequencies of a small number of categories. Each category is represented by a slice and the area of each slice is proportional to the percentage of data instances belonging to that category. Pie and donut charts should have only a few slices (between 2 and 5), labeled accordingly with either values, percentages or both.</p>
+                <p>In the examples below, the donut chart on the left illustrates the frequencies of the five most frequently used classes in the dataset. It is immediately clear that <code>doco:TextChunk</code>, a class that belongs to the Document Components Ontology (<a href="http://purl.org/spar/doco">DoCO</a>) and that represents a piece of text defined by a start point and an end point, is the most frequently used class in the dataset.</p>
+                <p>The pie chart on the right shows the five most frequent types of <code>doco:TextChunk</code> that are present in the dataset. <em>Attested name</em>, which indicates a concrete occurrence of a person's name in a certain form, is the type of <code>doco:TextChunk</code> that has been used the most. It is followed by <em>Philological note</em> (a diplomatic-interpretative comment), <em>Integration</em> (a conjectural addition made by the editor), <em>Lexical form</em> (the technical lexicon used in the correspondence) and <em>Change</em> (a note that alters or substitutes a word or an expression in the text). In the dataset, each type of <code>doco:TextChunk</code> is related to its respective piece of text through the property <code>dcterms:type</code>.</p>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <iframe src="visualization-files/donut-chart.html" frameborder="0" style="height:400px; width:500"></iframe>
+                    </div>
+                    <div class="col-md-6">
+                        <iframe src="visualization-files/pie-chart.html" frameborder="0" style="height:400px; width:500"></iframe>
+                    </div>
+                </div>
+
+                <p>The <b>bar chart</b> is a type of chart that displays data either vertically or horizontally by using columns to represent a category or attribute of that data. The height of each column reflects a frequency or a value for that category. Bar charts are useful for nominal comparison between many items belonging to a reduced number of categories. The horizontal display is useful when many categories are considered, since there is more room to accomodate the category labels.</p>
+                <p>In the dataset, each lexical form is an instance of <code>doco:TextChunk</code> with the property <code>dcterms:type</code> relating it to <code>http://vespasianodabisticciletters.unibo.it/lexical-form</code>. An instance of <code>doco:TextChunk</code> is related to its respective letter through the property <code>dcterms:source</code>, so it is possible to count the number of lexical forms per letter.</p>
+                <p>In the example below, the bar chart illustrates the frequency of lexical forms for each letter that contains at least one of them. The horizontal axis shows the number of lexical forms that are present in a letter. The vertical axis shows the letters, each identified by its respective label.</p>
+                <div style="text-align:center">
+                    <iframe src="visualization-files/bar-chart.html" frameborder="0" style="height:520px; width:1000"></iframe>
+                </div>
+            
+                <div class="line"></div>
+
+                <h3><em>Where</em>: the places of dispatch</h3>
+                <p>A <b>map chart</b> is a chart that compares values and shows categories across geographical entities. It is used when specific geographical information is present in the data that is to be visualized, like coordinates, countries, regions, cities and so on.</p>
+                <p>In the dataset, the sending of a letter is modelled as an instance of <code>pro:RoleInTime</code>, a class of the Publishing Roles Ontology (<a href="http://purl.org/spar/pro/">PRO</a>) which defines a situation describing a role a given agent may have in a particular period of time. Among other properties, the sending of a letter is characterized by being related to the role <i>sender</i> (identified by the URI <code>http://vespasianodabisticciletters.unibo.it/sender</code>) through the property <code>pro:withRole</code> and to a place through the property <code>bio:place</code>. Each place is an instance of <code>bio:Place</code>, a class that belongs to the Biographic Information vocabulary (<a href="http://purl.org/vocab/bio/0.1/">BIO</a>). In addition, the sending of a letter is related to the respective original exemplar of that letter through the property <code>pro:relatesTo</code>.</p>
+                <p>In the example below, the map illustrates most of the places from which the letters have been sent. Each icon marks a specific place, identified by its latitute and longitude. By clicking on an icon, a tooltip appears on the top of it. The tooltip shows the number of letters sent from that place as well as the full list of those letters, each identified by its label. Note that some places have not been considered in the visualization: namely, an <i>unknown place</i> (identified in the dataset by the URI <code>http://vespasianodabisticciletters.unibo.it/unknown-place</code>), from which the Letter 43 has been sent, and the <i>Aragonese campsite</i> (identified in the dataset by the URI <code>http://vespasianodabisticciletters.unibo.it/accampamento-aragonese-location</code>), from which the Letter 23 and the Letter 24 have been sent.</p>
+
+                <div style="text-align:center">
+                    <iframe src="visualization-files/map-chart.html" frameborder="0" style="height:650px; width:1050"></iframe>
+                </div>            
+
+                <div class="line"></div>
+
+                <h3><em>When</em>: the dates of dispatch</h3>
+                <p>A <b>timeline chart</b> is a type of chart that visually shows the chronological sequence of past or future events on a timescale. The chart’s timescale can be in days, weeks, months, quarters, years or other units of time depending on the type of events shown on it.</p>
+                <p>As explained in the previous section, the sending of a letter (an instance of <code>pro:RoleInTime</code> in the dataset) is characterized by having a series of properties. One of these properties is <code>tvc:atTime</code>, from the Time-indexed Value in Context ontology pattern (<a href="http://purl.org/spar/tvc">TVC</a>), which relates the sending of a letter to the year/interval of years when such letter has been sent (its date of dispatch). In the dataset, each date of dispatch has been modelled as an instance of <code>ti:TimeInterval</code>, a class of the Time Interval ontology pattern (<a href="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl">TI</a>).</p>
+                <p>In the example below, the timeline chart shows the date of dispatch of each letter as either a dot (if it is an event defined in an instant) or a bar (if it is an interval between a given date and another, representing an uncertain attribution). Overall, the timeline consists of two bands: the upper band shows the timeline items with data within the selected timeline interval, while the lower band shows the original distribution of the events in the timeline. By clicking and dragging on the lower band it is possible to create a sub chart for zoom and selection range functionalities.</p>
+                
+                <div style="text-align:center">
+                    <iframe src="visualization-files/timeline.html" frameborder="0" style="height:530px; width:1050"></iframe>
+                </div>            
+
+                <div class="line"></div>
+
+                <h3><em>Who</em>: the correspondents and the cited people</h3>
+                <p>The letters corpus allows getting a more comprehensive look on the relationships between Vespasiano and his correspondents, other important humanists and nobles of his time.</p>
+                <p>A correspondent is a person who sent one or more letters to Vespasiano. As explained in the previous sections, the sending of a letter is an instance of <code>pro:RoleInTime</code> characterized by having a number of different properties. In addition to <code>pro:relatesTo</code> (which relates the sending of a letter to the exemplar of that letter), another property is <code>pro:isHeldBy</code> and relates the sending of a letter to the correspondent. In the dataset, a person is modelled as an instance of <code>foaf:Person</code>, a class which belongs to the Friend Of A Friend vocabulary (<a href="http://xmlns.com/foaf/0.1/">FOAF</a>).</p>
+                <p>In the example below, another <b>bar chart</b> has been used to visualize each correspondent in relation to the number of letter he or she exchanged with Vespasiano. The horizontal axis shows the number of letters that has been exchanged between Vespasiano and his correspondents. The vertical axis shows the correspondents, each identified by his or her full name.</p>
+
+                <div style="text-align:center">
+                    <iframe src="visualization-files/bar-chart-correspondents.html" frameborder="0" style="height:520px; width:1000"></iframe>
+                </div>
+
+                <p>An <b>arc diagram</b> is a type of network graph in which the vertices are placed along a line, with edges being drawn as semicircles in one of the two halfplanes bound by it. An arc diagram is especially useful for visualizing ordered data.</p>
+                <p>A cited person is an instance of <code>foaf:Person</code> that is related to a piece of text, referencing that person and modelled as an instance of <code>doco:TextChunk</code> with type "attested form", through the property <code>dcterms:references</code>. In turn, that piece of text is related to its respective letter through the property <code>dcterms:source</code>.</p>
+                <p>In the example below, the arc diagram illustrates both the four most cited people in the letters (represented as teal-colored nodes) and the letters in which they are cited (represented as yellow-colored nodes) as well as the way in which they are related. This configuration allows one to clearly and easily observe all the letters in which a given person has been cited and, conversely, all the people that have been cited in a given letter.</p>
+
+                <div style="text-align:center">
+                    <iframe src="visualization-files/arc-diagram.html" frameborder="0" style="height:820px; width:1000"></iframe>
+                </div>
+
+                <footer class="pt-4 my-md-5 pt-md-5 border-top">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <h5><b>About</b></h5>
+                            <span class="text-muted">This work is part of the <b>Semantic Digital Edition of Vespasiano da Bisticci’s Letters</b>, a project maintained at the Digital Humanities Advanced Research Centre (<a href="https://centri.unibo.it/dharc/en">/DH.arc</a>) at the University of Bologna, Italy.</span>
+                          </div>
+                          <div class="col-md-6">
+                            <h5><b>Contacts</b></h5>
+                            <ul class="list-unstyled text-small">
+                              <li>University of Bologna</li>
+                              <li>Department of Classical Philology and Italian Studies (<a href="https://ficlit.unibo.it/it">FICLIT</a>)</li>
+                              <li>Via Zamboni 32, 40126 Bologna, Italia</li>
+                              <li>Email: <a href="mailto:dharc@live.unibo.it">dharc@live.unibo.it</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12" style="text-align:center">
+                            <span class="d-block mb-3 text-muted">Powered by: <a href="https://getbootstrap.com/">Bootstrap</a>, <a href="https://essepuntato.it/graffoo/">Graffoo</a>, <a href="https://github.com/jgraph/drawio">diagrams.net</a>, <a href="https://d3js.org/">D3.js</a>, <a href="https://c3js.org/">C3.js</a>, <a href="http://dimplejs.org/index.html">dimple.js</a>, <a href="https://leafletjs.com/">Leaflet</a></span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12" style="text-align:center">
+                                <span class="d-block mb-3 text-muted">&copy; 2020 Copyright: <a href="https://centri.unibo.it/dharc/en">/DH.arc</a> | DOI: 10.6092/unibo/vespasianodabisticciletters | <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+                          </div>
+                        </div>
+                      </footer>
+              </div>
+        </div>
+    
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <!-- Popper.JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#sidebar").mCustomScrollbar({
+                    theme: "minimal"
+                });
+    
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar, #content').toggleClass('active');
+                    $('.collapse.in').toggleClass('in');
+                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                });
+            });
+        </script>
+</body>
+</html>

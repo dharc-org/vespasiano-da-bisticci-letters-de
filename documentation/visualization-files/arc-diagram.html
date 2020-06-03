@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Load color palette -->
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+
+<script>
+// set the dimensions and margins of the graph
+var margin = {top: -20, right: 20, bottom: 300, left: 110},
+  width = 800,
+  height = 500;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// process data
+d3.json("arc-diagram.json", function( data) {
+
+  // list of node names
+  var allNodes = data.nodes.map(function(d){return d.name})
+
+  // list of groups
+  var allGroups = data.nodes.map(function(d){return d.grp})
+  allGroups = [...new Set(allGroups)]
+
+  // color scale for groups:
+  var color = d3.scaleOrdinal()
+    .domain(allGroups)
+    .range(d3.schemeSet3);
+
+  // linear scale for node size
+  var size = d3.scaleLinear()
+    .domain([1,10])
+    .range([2,10]);
+
+  // linear scale to position the nodes on the X axis
+  var x = d3.scalePoint()
+    .range([0, width])
+    .domain(allNodes)
+
+  // links are provided between nodes IDs, not between node names.
+  // a link between IDs and names has to be made
+  var idToNode = {};
+  data.nodes.forEach(function (n) {
+    idToNode[n.id] = n;
+  });
+
+  // add links
+  var links = svg
+    .selectAll('mylinks')
+    .data(data.links)
+    .enter()
+    .append('path')
+    .attr('d', function (d) {
+      start = x(idToNode[d.source].name)          // X position of start node on the X axis
+      end = x(idToNode[d.target].name)            // X position of end node
+      return ['M', start, height-30,              // the arc starts at the coordinate x=start, y=height-30 (where the starting node is)
+        'A',                                      // elliptical arc
+        (start - end)/2, ',',                     // coordinates of the inflexion point. Height of this point is proportional with start - end distance
+        (start - end)/2, 0, 0, ',',
+        start < end ? 1 : 0, end, ',', height-30] // arc on top. So if end is before start, putting 0 here turns the arc upside down
+        .join(' ');
+    })
+    .style("fill", "none")
+    .attr("stroke", "grey")
+    .style("stroke-width", 1)
+
+  // add circles to nodes
+  var nodes = svg
+    .selectAll("mynodes")
+    .data(data.nodes.sort(function(a,b) { return +b.n - +a.n }))
+    .enter()
+    .append("circle")
+      .attr("cx", function(d){ return(x(d.name))})
+      .attr("cy", height-30)
+      .attr("r", function(d){ return(size(d.n))})
+      .style("fill", function(d){ return color(d.grp)})
+      .attr("stroke", "white")
+
+  // labels
+  var labels = svg
+    .selectAll("mylabels")
+    .data(data.nodes)
+    .enter()
+    .append("text")
+      .attr("x", 0)
+      .attr("y", 0)
+      .text(function(d){ return(d.name)} )
+      .style("text-anchor", "end")
+      .attr("transform", function(d){ return( "translate(" + (x(d.name)) + "," + (height-15) + ")rotate(-45)")})
+      .style("font-size", 6)
+
+  // highlighting functionality
+  nodes
+    .on('mouseover', function (d) {
+      nodes                                 // highlight the nodes
+        .style('opacity', .2)
+      d3.select(this)
+        .style('opacity', 1)
+      links                                 // highlight the links
+        .style('stroke', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? color(d.grp) : '#b8b8b8';})
+        .style('stroke-opacity', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? 1 : .2;})
+        .style('stroke-width', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? 4 : 1;})
+      labels
+        .style("font-size", function(label_d){ return label_d.name === d.name ? 16 : 2 } )
+        .attr("y", function(label_d){ return label_d.name === d.name ? 10 : 0 } )
+
+    })
+    .on('mouseout', function (d) {
+      nodes.style('opacity', 1)
+      links
+        .style('stroke', 'grey')
+        .style('stroke-opacity', .8)
+        .style('stroke-width', '1')
+      labels
+        .style("font-size", 6 )
+
+    })
+})
+
+</script>
