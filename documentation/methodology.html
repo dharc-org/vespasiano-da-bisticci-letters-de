@@ -32,7 +32,7 @@
             </div>
 
             <ul class="list-unstyled components">
-                <p style="text-align:center">A semantic digital edition</p>
+                <p style="text-align:center">A knowledge site - Documentation</p>
                 <li>
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -107,7 +107,7 @@
 
             <ul class="list-unstyled CTAs">
                 <li>
-                    <a href="http://projects.dharc.unibo.it/vespasiano/" class="article">Semantic digital edition</a>
+                    <a href="http://projects.dharc.unibo.it/vespasiano/" class="article">Knowledge site</a>
                 </li>
                 <li>
                     <a href="https://github.com/dharc-org/vespasiano-da-bisticci-letters-de" class="article">GitHub repository</a>
@@ -128,9 +128,9 @@
         <div id="content">
 
             <h2 id="workflow">Workflow</h2>
-            <p>The following subsections show the various phases of development of the semantic digital edition. First, the <strong>XML/TEI P5 markup model</strong> is described. Then, the convertion process from the XML/TEI P5 documents into <strong>HTML documents</strong> is illustrated. Finally, the process of converting certain bits of information contained in the HTML documents into <strong>RDF statements</strong> is defined.</p>
+            <p>The following subsections show the various phases of development of the Knowledge site. First, the <strong>XML/TEI P5 markup model</strong> is described. Then, the convertion process from the XML/TEI P5 documents into <strong>HTML documents</strong> is illustrated. Finally, the process of converting certain bits of information contained in the HTML documents into <strong>RDF statements</strong> is defined.</p>
 
-            <h4 id="markup-model">Markup model</h4>
+            <h3 id="markup-model">Markup model</h3>
             <p>The letters have been marked up in <a href="https://tei-c.org/Guidelines/P5/">XML/TEI P5</a> format. The markup elements (<em>people</em>, <em>codices</em>, <em>technical lexicon</em> and <em>citations</em>) represent the access indexes to the letters. The following information has been encoded:</p>
             <ol>
                 <li>the <strong>diplomatic transcription</strong>: all the information regarding the normalization has been solved within the markup, thus respecting the original text;</li>
@@ -145,7 +145,7 @@
                 <li>the <strong>edition metadata</strong>, such as the identifier, paratextual information, repository information, interpretative information and commentaries about people, places, codices, events and technical lexicon.</li>
             </ol>
 
-            <h4 id="html-conversion">HTML conversion</h4>
+            <h3 id="html-conversion">HTML conversion</h3>
             <p>A series of HTML documents have been created starting from the letters that have been marked up in XML/TEI P5. The HTML documents follow responsive design principles that ensure their readability on multiple platforms and supports.</p>
             <p>Each HTML document represents a single letter and consists in a <code>div</code>  element, identified by an <code>@id</code> attribute with form “letter-[number]”, which contains:</p>
             <ol>
@@ -154,10 +154,10 @@
                 <li>a series of footnotes, each treated as a stand-alone <code>section</code> element with a <code>@class</code> attribute “Footnote” and a <code>@href</code> attribute linking it to the note. As seen previously, the proper text in each section is delimited in a series of paragraphs, each highlighted by the <code>p</code> element, which in turn contain a varying number of <code>span</code> elements. References to other letters have been expressed through the <code>a</code> element, by setting the link destination (the other letter) in the <code>@href</code> attribute.</li>
             </ol>
 
-            <h4 id="rdf-conversion">RDF conversion</h4>
+            <h3 id="rdf-conversion">RDF conversion</h3>
             <p>The Resource Description Framework (<a href="https://www.w3.org/TR/rdf11-primer/">RDF</a>) is a data model according to which data is organized in a graph structure. This graph is based on a series of statements about the domain of knowledge. Each statement is structured in a triple, in the form of “subject-predicate-object”. In the graph, “subject” and “object” are nodes connected with each other by a directed arc labelled as “predicate”. The subject denotes a resource, the object denotes another resource or an attribute of the subject, and the predicate expresses a semantic relationship between the two. Subject, predicate and object are each identified by their corresponding Uniform Resource Identifier (<a href="https://tools.ietf.org/html/rfc3986">URI</a>), a mechanism that allows resources to be identified unambiguously in a persistent way.</p>
             <p>After being harmonized so as to be cohesive, the HTML documents have been converted into RDF/XML documents. <a href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a> is an RDF serialization that expresses a RDF graph as a XML document.</p>
-            <p>Most of the values held by the <code>@class</code> attributes contained in <code>span</code> elements have been converted into ontological classes aligned with existing ontologies (e.g. the concept of “Person” has been aligned with the class <code>foaf:Person</code>, and so on). This has been done by using eXtensible Stylesheet Language Transformations (<a href="https://www.w3.org/TR/xslt-30/">XSLT</a>, a declarative programming language for converting a document in a XML-based format into another document in a different XML-based format. In order to generate a XSLT transformation two files are needed: the document to convert and a XSLT stylesheet that provides the semantics needed for the transformation. The XSLT stylesheet treats the document to convert as a set of nodes organized in a tree structure, and is made up by a series of templates containing the transformation rules to convert said tree structure into another tree structure.</p>
+            <p>Most of the values held by the <code>@class</code> attributes contained in <code>span</code> elements have been converted into ontological classes aligned with existing ontologies (e.g. the concept of “Person” has been aligned with the class <code>foaf:Person</code>, and so on). This has been done by using eXtensible Stylesheet Language Transformations (<a href="https://www.w3.org/TR/xslt-30/">XSLT</a>), a declarative programming language for converting a document in a XML-based format into another document in a different XML-based format. In order to generate a XSLT transformation two files are needed: the document to convert and a XSLT stylesheet that provides the semantics needed for the transformation. The XSLT stylesheet treats the document to convert as a set of nodes organized in a tree structure, and is made up by a series of templates containing the transformation rules to convert said tree structure into another tree structure.</p>
             
             <p>The output RDF/XML data has been collected into a single RDF dataset. The HTML files are still used for visualizing the single letters, while the RDF graph is used to explore the data related to them (e.g. indices, paratextual information, etc.).</p>
 
@@ -194,18 +194,18 @@
                 <li><strong>Item</strong>. It is the single, tangible and located exemplar of a certain Manifestation. It exemplifies one and only one Manifestation.</li>
             </ul>
             <p>These concepts are organized in a structure in which each entity is in a specific relationship with one other entity, forming a continuous flow from Work to Item and vice versa. This framework allows a holistic perspective about the resource, on multiple levels of conceptualization, by breaking down the semantic and conceptual ambiguities related to objects created by human hands into different but related and layered concepts and by allowing the description of an artifact and its relations with other entities to be more expressive, precise and dynamic.</p>
-            <p>An example of how FRBR has been used in the RDF graph of the semantic digital edition is illustrated in the figure below.</p>
+            <p>An example of how FRBR has been used in the RDF graph of the Knowledge site is illustrated in the figure below.</p>
             <img src="images/frbr-example.svg" alt="" class="center" style="width:700px">
             <p>The notion of the digital edition of Vespasiano da Bisticci’s Letters published by Francesca Tomasi has been broken down into multiple concepts distributed across the four FRBR levels of conceptualization. At the Work level, there is the abstract of the edition. At the Expression level, there is the content of the edition. At the Manifestation level, there is the edition in its specified form. At the Item level, there is the proper and specific digital edition existing on the Web.</p>
         
                 <footer class="pt-4 my-md-5 pt-md-5 border-top">
                         <div class="row">
                           <div class="col-md-6">
-                            <h5><b>About</b></h5>
-                            <span class="text-muted">This work is part of the <b>Semantic Digital Edition of Vespasiano da Bisticci’s Letters</b>, a project maintained at the Digital Humanities Advanced Research Centre (<a href="https://centri.unibo.it/dharc/en">/DH.arc</a>) at the University of Bologna, Italy.</span>
+                            <h3><b>About</b></h3>
+                            <span class="text-muted">This work is part of the <b>Knowledge site of Vespasiano da Bisticci’s Letters</b>, a project maintained at the Digital Humanities Advanced Research Centre (<a href="https://centri.unibo.it/dharc/en">/DH.arc</a>) at the University of Bologna, Italy.</span>
                           </div>
                           <div class="col-md-6">
-                            <h5><b>Contacts</b></h5>
+                            <h3><b>Contacts</b></h3>
                             <ul class="list-unstyled text-small">
                               <li>University of Bologna</li>
                               <li>Department of Classical Philology and Italian Studies (<a href="https://ficlit.unibo.it/it">FICLIT</a>)</li>
