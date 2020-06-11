@@ -1,0 +1,11 @@
+extends browse-layout
+
+block list-names 
+  for x,i in placeLetters
+   section.dropDown
+    h3=x.place
+     span= ' [' + x.letter.length + ']'
+    p.html Lettere: 
+      for y,z in x.letter
+        span.letter
+         a(href=y.value)= y.value + '   '

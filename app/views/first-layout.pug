@@ -1,0 +1,130 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='stylesheets/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    script(src='https://code.jquery.com/jquery-3.1.1.min.js')
+    script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js')
+    script(src='javascripts/browsing.js')
+  body
+    h1.title
+      a(href='/vespasiano') VESPASIANO DA BISTICCI
+    h2.subtitle
+      a(href='/vespasiano') LETTERE
+      span.payoff a knowledge site
+  block content
+    block menu
+        div.menuWrap
+          div.menuBtn
+            i(class="fa fa-bars", aria-hidden="true")
+          nav.browsingmenu
+            section.singlemenu
+              h3.headermenu ESPLORA LA RACCOLTA
+              ul.headermenu
+                li
+                  a(href='browse/corrispondenti') per corrispondente
+                li
+                  a(href='browse/luoghi') per luogo
+                li
+                  a(href='browse/date') per data
+                li
+                  a(href='browse/segnatura') per segnatura
+            section.singlemenu
+              section.instrument
+                h3.headermenu AUTHORITIES
+                p
+                 span.green //
+                  a(href='indices/persone') persone
+                 span.green //
+                  a(href='indices/codici') codici
+                 span.green //
+                  a(href='indices/lessico') lessico
+                 span.green //
+                  a(href='indices/citazioni') citazioni
+              section.instrument
+                h3.headermenu TAVOLA SINOTTICA
+                p
+                 span.green //
+                  a(href='indices/lettere') lettere
+              section.instrument
+                h3.headermenu NOTA FILOLOGICA
+                p
+                 span.green //
+                  a(href='nota') i principi della trascrizione
+              section.instrument
+                h3.headermenu TESTIMONI
+                p
+                 span.green //
+                  a(href='testimoni') i testimoni della raccolta
+              section.instrument
+                h3.headermenu BIBLIOGRAFIA
+                p
+                 span.green //
+                  a(href='bibliografia') i precedenti editori e la bibliografia
+            section(class='singlemenu b-green')
+             section.singleinfomenu
+              h3.headermenu
+                span L'EDIZIONE
+              ul.infomenu
+                li.info-titlemenu IL PROGETTO
+                li
+                  a(href='markup') il markup e l'ipertesto
+                li.info-titlemenu IL COMMENTO AL TESTO
+                li
+                  a(href='annotazione') i livelli di annotazione
+                li.info-titlemenu LA BASE DI CONOSCENZA
+                li
+                  a(href='dati') il dataset e le ontologie
+                li.info-titlemenu LA RIPRODUCIBILITÀ
+                li
+                  a(href="https://dharc-org.github.io/vespasiano-da-bisticci-letters-de/documentation/index.html") la documentazione
+
+             section.singleinfomenu
+              h3.headermenu
+                span IL CORPUS
+              ul.infomenu
+                li
+                  a(href='raccolta') la raccolta
+                li
+                  a(href='i-corrispondenti') i corrispondenti
+                li
+                  a(href='manoscritti') i manoscritti
+                li
+                  a(href='copisti') i copisti
+                li
+                  a(href='biblioteche') le biblioteche
+
+
+    block main-content
+  footer
+    section
+      h2 Il progetto
+      p Il progetto di edizione si inserisce nell’attività di ricerca del Digital Humanities Advanced Research Centre (
+        a(href='https://centri.unibo.it/dharc') /DH.arc
+        | ) presso il Dipartimento di Filologia Classica e Italianistica (
+        a(href="https://ficlit.unibo.it/it") FICLIT
+        | ) dell'Università di Bologna.
+    section
+      h2 Contatti
+      p Alma Mater Studiorum - Università di Bologna (
+        a(href="https://www.unibo.it/it") UniBo
+        | )
+      p Dipartimento di Filologia Classica e Italianistica (
+        a(href="https://ficlit.unibo.it/it") FICLIT
+        | )
+      p Via Zamboni 32, 40126, Bologna
+      p
+        a(href="mailto:dharc@live.unibo.it") dharc@live.unibo.it
+    section
+      h2 Edizione
+      p © 2020
+        a(href='https://centri.unibo.it/dharc') /DH.arc
+      //-p DOI:
+        //-a(href='https://doi.org/10.6092/unibo/vespasianodabisticciletters') 10.6092/unibo/vespasianodabisticciletters
+      p
+        a(href='http://creativecommons.org/licenses/by/4.0/') Licenza CC BY 4.0
+      p
+        a(href='credits') Credits
+        |, 
+        a(href="https://dharc-org.github.io/vespasiano-da-bisticci-letters-de/documentation/index.html") Documentazione

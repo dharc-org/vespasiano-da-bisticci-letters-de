@@ -1,0 +1,84 @@
+extends layout
+
+block content
+  block menu
+    div.menuWrap
+      div.menuBtn
+        i(class="fa fa-bars", aria-hidden="true")
+      nav.browsingmenu
+        section.singlemenu
+          h3.headermenu ESPLORA LA RACCOLTA
+          ul.headermenu
+            li
+              a(href='../browse/corrispondenti') per corrispondente
+            li
+              a(href='../browse/luoghi') per luogo
+            li
+              a(href='../browse/date') per data
+            li
+              a(href='../browse/segnatura') per segnatura
+        section.singlemenu
+          section.instrument
+            h3.headermenu INDICI
+            p
+             span.green //
+              a(href='../indices/persone') persone
+             span.green //
+              a(href='../indices/codici') codici
+             span.green //
+              a(href='../indices/lessico') lessico
+             span.green //
+              a(href='../indices/citazioni') citazioni
+          section.instrument
+            h3.headermenu TAVOLA SINOTTICA
+            p
+             span.green //
+              a(href='../indices/lettere') lettere
+          section.instrument
+            h3.headermenu NOTA FILOLOGICA
+            p
+             span.green //
+              a(href='../nota') i principi della trascrizione
+          section.instrument
+            h3.headermenu TESTIMONI
+            p
+             span.green //
+              a(href='../testimoni') i testimoni della raccolta
+          section.instrument
+            h3.headermenu BIBLIOGRAFIA
+            p
+             span.green //
+              a(href='../bibliografia') i precedenti editori e la bibliografia
+        section(class='singlemenu b-green')
+         section.singleinfomenu
+          h3.headermenu
+            span L'EDIZIONE
+          ul.infomenu
+            li.info-titlemenu IL PROGETTO
+            li
+              a(href='../markup') il markup e l'ipertesto
+            li.info-titlemenu IL COMMENTO AL TESTO
+            li
+              a(href='../annotazione') i livelli di annotazione
+            li.info-titlemenu LA BASE DI CONOSCENZA
+            li
+              a(href='../dati') il dataset e le ontologie
+            li.info-titlemenu LA RIPRODUCIBILITÀ
+            li
+              a(href="https://dharc-org.github.io/vespasiano-da-bisticci-letters-de/documentation/index.html") la documentazione
+         section.singleinfomenu
+          h3.headermenu
+            span IL CORPUS
+          ul.infomenu
+            li
+              a(href='../raccolta') la raccolta
+            li
+              a(href='../i-corrispondenti') i corrispondenti
+            li
+              a(href='../manoscritti') i manoscritti
+            li
+              a(href='../copisti') i copisti
+            li
+              a(href='../biblioteche') le biblioteche
+
+  block main-content

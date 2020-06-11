@@ -1,0 +1,595 @@
+@font-face { font-family: headers; src: url(fonts/headers.otf); }
+@font-face { font-family: mainText; src: url(fonts/mainText.otf); }
+@font-face { font-family: letter; src: url(fonts/letter.otf); }
+@font-face { font-family: letterItalic; src: url(fonts/letter-italic.otf); }
+
+body {
+  font-family: "mainText", sans-serif;
+  color: rgb(60,53,53);
+  margin: 0px;
+}
+
+h2, h3 {
+	font-family: "headers", Helvetica, sans-serif;
+	font-size: 2.5em;
+	letter-spacing: 0.02em;
+}
+
+h4 {
+	font-family: "headers", Helvetica, sans-serif;
+	font-size: 2em;
+	letter-spacing: 0.02em;
+	color: rgb(60,53,53);
+}
+
+a {
+	color: rgb(60,53,53);
+	text-decoration: none;
+}
+
+a:hover {
+	color: rgb(58,193,144);
+}
+.title a:hover, .subtitle a:hover, a.Letter:hover {
+	color: rgb(60,53,53);
+}
+
+p, li, xmp, a.Letter {
+	font-size: 1.4em;
+}
+
+xmp {
+	margin-top: -1em;
+	padding-left: 2em;
+	color: rgb(127,110,113);
+}
+
+.fa:hover {
+	cursor:pointer;
+	color: #fff
+}
+
+section.Footnote>h2:hover, p.html>a:hover, section.content li>a:hover, section.dropDown p a:hover, section.dropDown>h3:hover, section.dropDown span>a:hover, section.dropDown section.data a:hover, span.letter>a:hover, span.letterList:hover {
+	color: rgb(60,53,53);
+	cursor: pointer;
+}
+
+section.dropDown a:hover {
+	text-decoration-line: underline
+}
+
+section.dropDown>h3::before {
+	content: "\0BB \020 "
+}
+
+section.dropDown p.html:not(p.html>span) {
+	font-weight: 700
+}
+
+/* menu */
+.menuWrap {
+	position: relative;
+	margin-bottom: 4em;
+	background-color: rgb(60,53,53);
+	color: #fff;
+}
+
+.menuWrap a {
+	color: #fff;
+}
+
+.menuWrap a:hover {
+	color: rgb(58,193, 144);
+}
+
+.menuBtn {
+	color: rgb(127,110,113);
+	width: 2em;
+	height: 2em;
+	padding: 1em 2em;
+}
+
+.menuBtn i {
+	font-size: 2em;
+}
+
+h3.headermenu {
+	font-size: 1.7em;
+	font-weight: normal;
+	font-family: "headers", sans-serif;
+	color: #fff;
+}
+
+nav.browsingmenu {
+	display: none;
+	font-size: 1em
+}
+
+section.singlemenu {
+	display: inline-block;
+	vertical-align: top;
+	padding: 0px 1.5em;
+}
+
+section.singlemenu h3 + p {
+	margin: -1em 0px;
+}
+
+section.instrument:last-of-type {
+	padding-bottom: 4em;
+}
+
+section.singlemenu ul.infomenu {
+	list-style-type: none;
+	line-height: 2em;
+	padding-left: 0px;
+}
+
+section.b-green {
+	background-color: rgb(58,193, 144);
+	padding: 0 0 1.7em 10px
+}
+
+.b-green a:hover {
+	color: rgb(60,53,53);
+}
+
+section.singlemenu:last-of-type {
+	float: right;
+	padding-right: 1em;
+}
+
+section.singleinfomenu {
+	display: inline-block;
+	padding: 0.5em 0px;
+}
+
+section.singleinfomenu ul.infomenu {
+	line-height: 2.5em
+}
+
+li.info-titlemenu {
+	font-size: 1.7em;
+	font-weight: normal;
+	font-family: "headers", sans-serif;
+	color: #fff;
+}
+
+section.singleinfomenu:last-of-type {
+	vertical-align: top;
+	padding-left: 2em;
+	padding-right: 2em
+}
+
+section.singleinfomenu h3, section.singleinfomenu ul {
+	float: left;
+}
+
+section.singleinfomenu h3 span {
+	transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    position:relative;
+    top:0.7em;
+    display:inline-block;
+    color:#fff;
+}
+
+/* main content */
+section.content {
+	margin: 2em 9em;
+	line-height: 2.2em;
+}
+
+/* main content */
+section.content ul {
+	list-style-type: none;
+}
+
+section.content ul li:before {
+	content: "\0BB \020 ";
+	color: rgb(58,193, 144);
+}
+
+section.content a {
+	color: rgb(58,193, 144);
+}
+
+/* footer */
+footer {
+	clear: both;
+	background-color: rgb(60,53,53);
+	color: #fff;
+	padding: 2em;
+	margin-top: 5em;
+	position: relative;
+}
+
+footer section {
+	width: 30%;
+	display: inline-table;
+	margin-right: 2em;
+}
+
+footer section a {
+	color: #fff;
+	text-decoration: underline solid
+}
+
+/* banner */
+.title, .subtitle {
+	font-family: "headers", Helvetica, sans-serif;
+	text-align: center;
+	letter-spacing: 0.02em;
+}
+
+.title {
+	font-size: 4em;
+	margin-bottom: -0.5em;
+}
+
+.subtitle {
+	font-size: 3.5em;
+	padding-left: 30%;
+}
+
+.payoff {
+	font-size: 1.2rem;
+	font-weight: normal;
+	letter-spacing: 0.06em;
+	font-family: "mainText", sans-serif;
+	background-color: rgb(58,193, 144);
+	color: #fff;
+	padding-bottom: 0.4em;
+	padding-top: 0.6em;
+	padding-left: 0.4em;
+	padding-right: 0.4em;
+	margin-left: 1em;
+	vertical-align: middle;
+	display: inline;
+}
+
+/* home page */
+/* slide */
+
+figure {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	margin: 0px;
+}
+
+figure img {
+	width: 100%;
+	height: auto;
+}
+
+figcaption {
+	font-size: 1.2em;
+	letter-spacing: 0.05em;
+	background-color: rgb(58,193, 144);
+	opacity: 0.9;
+	color: #fff;
+	position: relative;
+	height: 100%;
+	opacity: 1;
+	-webkit-transition: all 0.6s ease;
+	-moz-transition:    all 0.6s ease;
+	-o-transition:      all 0.6s ease;
+}
+
+/*figure:hover figcaption {
+  opacity: 0.9;
+  left: 0;
+}*/
+
+figcaption p {
+	padding: 2em 3em;
+	font-size: 2.3vw;
+}
+
+/* esplora la collezione */
+section.browsing, section.instruments {
+	padding: 5em 0em 5em 2em;
+	margin-bottom: 2em;
+}
+
+section.browsing nav {
+	float: left;
+}
+
+nav.browsing {
+	width: 30%;
+}
+
+nav.browsing ul, ul.headermenu {
+	list-style-type: none;
+	border-left: solid 1em rgb(58,193, 144);
+	padding: 1.5em;
+}
+
+
+/* guida all'edizione e corpus */
+nav.info {
+	width: 50%;
+}
+
+nav.info {
+	background-color: rgb(58,193, 144);
+	padding: 2em;
+	width: 65%;
+}
+
+nav.info h2 {
+	float: left;
+}
+
+nav.info h2 span {
+	transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    position:relative;
+    top:0.7em;
+    display:inline-block;
+    color:#fff;
+}
+
+ul.info {
+	float: left;
+	list-style-type: none;
+	padding-left: 0px;
+	padding-right: 3em;
+}
+
+ul.info li {
+	padding-bottom: 1em;
+}
+
+ul.info li a {
+	font-size: 1.4em;
+}
+
+ul.info li a:hover {
+	color:  #fff;
+}
+
+.info-title {
+	font-family: "headers", Helvetica, sans-serif;
+	font-size: 1.6em;
+	letter-spacing: 0.02em;
+	color: #fff;
+}
+
+/* authorities */
+section.instruments {
+	margin-left: 30%;
+}
+
+section.instruments::before {
+	content: " ";
+	width: 10em;
+	float: left;
+	border-top: solid 1em rgb(58,193, 144);
+}
+section.instruments, section.instrument {
+	clear: both;
+}
+section.instruments h2 {
+	float: left;
+	padding-right: 1em;
+	margin-bottom: -0.5em;
+}
+
+section.instruments p {
+	float: left;
+	font-size: 1.4em;
+	vertical-align: middle;
+	padding-top: 1.5em;
+}
+
+.green {
+	color: rgb(58,193, 144);
+}
+.green a {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+/* other pages */
+/* bibliography */
+span.letterList, section.dropDown h3 {
+	display: block;
+	font-family: "headers", sans-serif;
+	font-size: 1.5em;
+	font-weight: normal;
+	color: rgb(58,193, 144);
+	border-bottom: solid 1px rgb(58,193, 144);
+	padding: 1em 0px;
+}
+
+/* handle error - ? */
+div[data-letter]:last-of-type {
+	display: none;
+}
+
+p.biblioRef {
+	display: none;
+}
+
+/* citations */
+
+blockquote {
+	font-family: 'letterItalic', serif;
+	font-size: 1.5em;
+	position: relative;
+}
+
+blockquote:before {
+	display: block;
+	position: absolute;
+	content: "\201C";
+	font-size: 4em;
+	color: rgb(127,110,113);
+	top: 20px;
+	left: -50px;
+	z-index: 2000;
+}
+
+/* thumbnail - lettere */
+section.dropDown img {
+	padding: 0px 1em 0px 0px;
+}
+
+/* letters */
+ul.letterMenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.visualization {
+    display: none !important;
+}
+
+ul.letterMenu li {
+    display: inline;
+    margin: 0 5px 0 0;
+}
+
+ul.letterMenu li a {
+	font-family: "headers", sans-serif;
+	padding: 10px 10px 12px;
+	border: solid;
+	border-color: rgb(60,53,53);
+	border-width: 1px 1px 0 1px;
+	border-radius: 3px;
+}
+
+ul.letterMenu li.ui-state-active {
+	padding-bottom: 10px;
+    background: white;
+}
+
+#Metadata, #Letter, #Notes {
+	border: 1px solid;
+	border-color: rgb(60,53,53);
+	border-radius: 3px;
+	padding-left: 20px;
+	padding-right: 20px
+}
+
+ul.letterMenu li::before {
+	display: none;
+}
+
+/* tabs content */
+ul.metadata, ul.metadata ul {
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+article.Letter {
+	font-family: "letter", serif;
+}
+
+article.Letter h1 {
+	margin-top: 20px;
+	font-family: "mainText", sans-serif;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+section.Footnote h2 {
+	font-size: 1.4em;
+	color: rgb(58,193, 144);
+	font-weight: normal;
+	padding-bottom: 0.2em;
+}
+
+article span.Person {
+	color: rgb(0, 174, 255);
+}
+
+span.Note {
+	border-bottom: dotted 1px;
+}
+
+span.Note:hover:after{
+	border: 1px solid rgb(127,110,113);
+	border-radius: 4px;
+	padding: 0.5em;
+	background: #fff;
+	content: attr(data-description);
+	position: absolute;
+}
+
+span.Quotation {
+	font-family: "letterItalic", sans-serif;
+	color: rgb(29, 172, 117)
+}
+
+span.Codex {
+	color: rgb(250, 32, 25);
+}
+
+span.lexicon {
+	color: rgb(206, 171, 19)
+}
+
+article.Letter span.Place {
+	color: rgb(231, 25, 238)
+}
+
+article.Letter span.TimeInterval {
+	color: rgb(207, 105, 22)
+}
+
+form {
+	width: auto
+}
+
+fieldset {
+	background-color: rgba(58,193, 144, 0.1);
+	border-radius: 4px;
+}
+
+legend {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	background-color: #fff;
+	border-radius: 4px;
+	border: 1px solid rgb(127,110,113)
+}
+
+ul.legenda {
+	font-size: 15px;
+	border: 1px hidden;
+	border-radius: 4px;
+}
+
+ul.legenda>li>span {
+	font-weight: 700;
+    margin-top: 1px;
+	padding: 0px;
+}
+
+div.prevnext-bar {
+	border-bottom: 1px solid grey;
+	position: relative;
+	margin-bottom: 30px;
+	color: rgb(58,193, 144);
+	font-family: "headers", sans-serif;
+}
+
+span.next {
+	position: absolute;
+	right:0
+}
+
+span.prev>a:hover, span.next>a:hover {
+	color: rgb(127,110,113);
+	cursor: pointer;
+}

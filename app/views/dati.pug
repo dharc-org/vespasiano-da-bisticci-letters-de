@@ -1,0 +1,134 @@
+extends first-layout
+
+block main-content
+ section.content
+  h2 LA BASE DI CONOSCENZA
+  section.dropDown
+   h3 L'embedded markup XML/TEI
+   p Il modello di markup proposto vuole tradurre i tre elementi cardine dell'edizione in un sistema formale.
+   p Il modello dichiara quindi in forma esplicita i punti di accesso al contenuto della lettera. Tali punti di accesso rappresentano anche gli indici che costituiscono i possibili percorsi di navigazione dell'utente finale:
+   ul
+    li persone citate nelle lettere;
+    li testi citati e manoscritti realizzati dalla scuola di Vespasiano;
+    li lessico tecnico della copia e del commercio librario.
+   p A livello di markup è semplice rappresentare, attraverso adeguati elementi e attributi, questo tipo di dati. Gli esempi che seguono mostrano l'impiego della TEI P5 con riferimenti utili alla creazione del file <a href="https://www.w3.org/RDF/">RDF</a> (Resource Description Framework).
+   h4 Persone - tag <persname>
+   p L'identificazione dei nomi, così come compaiono nella lettera, si ha attraverso una sigla.
+   p Questa permette di disambiguare tutte le forme varianti dello stesso nome attribuendo loro un codice identificativo univoco (# + 'p' + numero crescente):
+   p
+    xmp <persName ref="#P123">Piero Strozzi</persName>
+    xmp <persName ref="#P127">Pipo</persName>
+    xmp <persName ref="#P0">Vespasiano di Filippo</persName>
+    xmp <persName ref="#P80">Piero di Chosimo de' Medici</persName>
+   h4 Codici manoscritti - tag <bibl> con elementi author e/o title
+   p L'identificazione di autori e testi così come compaiono nella lettera avviene attraverso una sigla, cioè un codice identificativo univoco (# + 'c' + numero crescente):
+   p
+    xmp <bibl ref="#C32">
+    xmp   <author ref="#plinio">Prinio</author>
+    xmp </bibl>
+    xmp <bibl ref="#C31">
+    xmp   <title>Decha</title>
+    xmp </bibl>
+   h4 Termini tecnici - tag <term>
+   p L'identificazione di termini tecnici così come compaiono nella lettera avviene attraverso una sigla, cioè un codice identificativo univoco (#abbreviazione):
+   p
+    xmp <term type="binding" ref="#L50">legaranno</term>
+    xmp <term type="illumination" ref="#L46">miniare</term>
+   p Il markup TEI ci consente quindi di identificare: nomi propri (persname), codici manoscritti citati (bibl) e relativi autori (author) e titoli (title), lessico tecnico (term) relativo a vari e diversi ambiti (@type = " writing|support|binding|illumination|format|philology|cost ").
+   p Il valore dell'attributo @ref (reference) aiuta una prima identificazione delle stringhe presenti all'interno del documento, puntando ad una descrizione dell'elemento conservata in un luogo (in una porzione [identificata da #] di un file) esterno al documento stesso. Nello specifico sono stati creati 3 diversi authority file: uno per le persone (people), uno per i codici manoscritti (manuscripts) ed un altro per il lessico (lexicon).
+   p Il valore di @ref è utile alla realizzazione di un URI (Uniform Resource Identifier) univoco, che viene descritto in un file <a href="./vespasiano/rdf/vdbRdf.rdf">RDF/XML</a>. Utilizzando il meccanismo degli URI è infatti possibile creare collegamenti fra il contenuto della lettera ed informazioni descrittive sulle stringhe annotate.
+   p Se il meccanismo degli URI ci dà modo di identificare univocamente ogni entità rappresentabile da una o più stringhe, e di descriverla ulteriormente in un documento esterno (RDF/XML) a quello in cui quella stringa appare (XML/TEI), è necessario prevedere un sistema per adempiere al compito primario dell'edizione: costruire relazioni fra gli elementi annotati dotati di un URI. Questi collegamenti devono essere in grado di rispondere a domande del tipo: che relazione esiste fra 'Piero de' Medici' (#P80) e uno specifico esemplare delle Storie Naturali di Plinio (#C32)? E quale relazione esiste fra lo stesso manoscritto (#C32) e la parola 'legaranno' (#L50)?
+   p Ma il modello dovrebbe essere in grado di rispondere anche a domande del tipo: quale esemplare delle Storie Naturali è stato realizzato (qual è la sua segnatura odierna) e in quale biblioteca è ad oggi conservato? Chi l'ha copiato? Chi l'ha miniato? Chi è Piero de' Medici?
+   p Per rispondere al primo set di domande (cfr. infra) è necessario aggiungere semantica alla descrizione del documento. Non è quindi sufficiente classificare le stringhe come persone, codici manoscritti o lessico, ma è necessario esprimere formalmente, ed in modo processabile dalla macchina, informazioni aggiuntive sulle stringhe, descrivendone le relazioni. Il modello RDF dà la possibilità di esprimere tramite asserti, detti triple (soggetto, predicato, oggetto), relazioni fra le entità, rappresentate nel testo da stringhe di testo e identificate univocamente da URI.
+   p Per il secondo set di domande (cfr. infra) è necessario creare collegamenti fra l'edizione e le risorse nel web capaci di estendere la descrizione fatta da un editore. Questo significa agevolare il dialogo fra URI interni all'edizione e URI esterni correlati, avvalendosi di predicati ontologici.
+  section.dropDown
+   h3 L'informazione esterna: il file RDF
+   p Una volta che il testo è stato marcato prevedendo forme di dialogo con entità descritte esternamente, è necessario esprimere attraverso URI e RDF le relazioni e quindi realizzare l'annotazione in RDF. Nel caso dell'edizione delle lettere di Vespasiano da Bisticci è stato realizzato un unico file <a href="./vespasiano/rdf/vdbRdf.rdf">RDF/XML</a>, contenente tutte le informazioni relative alle entità citate (lettere, persone, codici, lessico, ecc.).
+   p Come detto, con gli URI è possibile identificare univocamente entità reali, come le persone, o concettuali, come i termini lessicali. Con RDF è possibile esprimere le relazioni fra gli elementi dotati di un URI. Ma non solo. Ogni elemento dotato di identificazione può intrattenere una relazione di un qualche tipo con una stringa, sia essa un valore letterale o un altro URI.
+   h4 Persone
+   p Le persone possono avere diverse proprietà dedotte dal testo ed essere messe quindi in relazione con i codici menzionati.
+   ul
+    li Identificazione univoca (frammento di URI): #P80
+    li Normalizzazione del nome (entry per un'authority record o definizione di un'access key): Medici de', Piero (1416-1469)
+    li Forme varianti del nome così come attestate nelle lettere: Piero, Piero di Cosimo de' Medici, Principe di Firenze
+    li Relazioni con il codice manoscritto "Plinio, Storie Naturali"
+   p In linguaggio formale possiamo esprimere questi concetti come relazioni attraverso i seguenti asserti:
+   p
+    xmp <rdf:Description rdf:about="http://vespasianodabisticciletters.unibo.it/p80">
+    xmp   <rdfs:label xml:lang="it">Medici de', Piero (1416-1469)</rdfs:label>
+    xmp   <owl:sameAs rdf:resource="http://viaf.org/viaf/25406033"/>
+    xmp   <dcterms:isReferencedBy>
+    xmp     <rdf:Description rdf:about="http://vespasianodabisticciletters.unibo.it/tomasi-letter-19-tergo-p80-attested-name-d237e133">
+    xmp       <rdfs:label xml:lang="it">Piero &lt;di Chosi&gt;mo de' Medici</rdfs:label>
+    xmp     </rdf:Description>
+    xmp   </dcterms:isReferencedBy>
+    xmp   <pro:isRelatedToRoleInTime>
+    xmp     <pro:RoleInTime rdf:about="http://vespasianodabisticciletters.unibo.it/P80-customer-c32">
+    xmp       <rdfs:label xml:lang="it">Codice "Prinio". Realizzato per Piero de' Medici</rdfs:label>
+    xmp       <pro:relatesTo rdf:resource="http://vespasianodabisticciletters.unibo.it/c32"/>
+    xmp       <pro:isHeldBy rdf:resource="http://vespasianodabisticciletters.unibo.it/p80"/>
+    xmp       <pro:withRole rdf:resource="http://vespasianodabisticciletters.unibo.it/customer"/>
+    xmp     </pro:RoleInTime>
+    xmp   </pro:isRelatedToRoleInTime>
+    xmp </rdf:Description>
+   p Possiamo quindi associare ad ogni stringa identificata nel documento con <persname> diversi tipi di proprietà: un identificatore univoco (URI); alcune caratteristiche estratte dal documento stesso (forme varianti del nome attestate); altre proprietà dedotte dalla lettura del documento (la relazione fra la persona e un codice).
+   p Un primo passo verso l'interoperabilità è quello di collegare l'URI definito internamente con l'identificatore univoco stabilito in altri progetti. Relazionando il nostro URI all'identificatore utilizzato in altri progetti (come <a href="https://viaf.org/">VIAF</a>, che stabilisce le forme controllate dei nomi), è possibile far dialogare le risorse e creare collegamenti con altri sistemi standard come LCA e MARC (cfr. infra).
+   h4 Codici manoscritti
+   p Allo stesso modo i codici possono essere identificati attraverso un URI e normalizzati utilizzando repertori specifici. Andranno poi ovviamente posti in relazione con le persone con le quali quei codici sono in qualche modo collegati.
+   ul
+    li Identificazione univoca (frammento di URI): #C32
+    li Normalizzazione: Plinio, Storie naturali
+    li Relazioni con persone (committente): Piero de' Medici
+   p In linguaggio formale possiamo esprimere questi concetti come relazioni attraverso i seguenti asserti:
+   p
+    xmp <rdf:Description rdf:about="http://vespasianodabisticciletters.unibo.it/c32">
+    xmp   <rdfs:label xml:lang="it">Codice "Prinio"</rdfs:label>
+    xmp   <fabio:isPortrayalOf>
+    xmp     <fabio:Work rdf:about="http://vespasianodabisticciletters.unibo.it/storia-naturale-plinio">
+    xmp       <rdfs:label xml:lang="it">[Storia naturale]</rdfs:label>
+    xmp       <dcterms:title>[Storia naturale]</dcterms:title>
+    xmp       <owl:sameAs rdf:resource="http://viaf.org/viaf/178224328"/>
+    xmp     </fabio:Work>
+    xmp   </fabio:isPortrayalOf>
+    xmp   <pro:isRelatedToRoleInTime>
+    xmp     <pro:RoleInTime rdf:about="http://vespasianodabisticciletters.unibo.it/P80-customer-c32">
+    xmp       <rdfs:label xml:lang="it">Codice "Prinio". Realizzato per Piero de' Medici</rdfs:label>
+    xmp       <pro:relatesTo rdf:resource="http://vespasianodabisticciletters.unibo.it/c32"/>
+    xmp       <pro:isHeldBy rdf:resource="http://vespasianodabisticciletters.unibo.it/p80"/>
+    xmp       <pro:withRole rdf:resource="http://vespasianodabisticciletters.unibo.it/customer"/>
+    xmp     </pro:RoleInTime>
+    xmp   </pro:isRelatedToRoleInTime>
+    xmp </rdf:Description>
+   h4 Termini tecnici
+   p Anche i termini tecnici, dotati di un URI, andranno normalizzati e posti in relazione con i codici a cui si riferiscono.
+   ul
+    li Identificazione univoca (frammento di URI): #L46
+    li Normalizzazione: miniare
+    li Tipologia: illumination
+    li Relazioni fra il lessico e il codice a cui il lessico si riferisce: Plinio, Storie naturali.
+   p In linguaggio formale possiamo esprimere questi concetti come relazioni attraverso i seguenti asserti:
+   p
+    xmp <rdf:Description rdf:about="http://vespasianodabisticciletters.unibo.it/l46">
+    xmp   <rdfs:label xml:lang="it">miniare</rdfs:label>
+    xmp   <fabio:hasSubjectTerm rdf:resource="http://vespasianodabisticciletters.unibo.it/illumination"/>
+    xmp   <dcterms:relation rdf:resource="http://vespasianodabisticciletters.unibo.it/c32"/>
+    xmp </rdf:Description>
+  section.dropDown
+   h3 I collegamenti con il web of data
+   p Il framework RDF, come mezzo per esprimere asserti, associato all'ontologia quale concettualizzazione formale di un dominio, sono strumenti utili per la rappresentazione della conoscenza implicita dell'editore critico.
+   p Costruire un'ontologia significa non solo usare linguaggi formali, ma anche stabilire classi, definire proprietà nella forma dei predicati, ed esprimere valori associati a quelle proprietà, rispetto al dominio di analisi. Nell'edizione le tre categorie sulle quali abbiamo ragionato (persone, termini tecnici e codici manoscritti) sono tre possibili classi di un'ontologia di dominio, dotate di proprietà (i predicati) e relativo valore (gli oggetti). Ogni istanza della nostra classe identificata in modo univoco (il soggetto identificato attraverso URI) intrattiene relazioni di varia natura (le proprietà che diventano predicati), con altre istanze (i valori delle proprietà che diventano oggetti), i quali possono essere dei valori letterali o a loro volta delle entità dotate di identificativi univoci (vedi asserti nella sezione precedente). Passiamo quindi dall'edizione come classificazione e categorizzazione degli elementi annotati (il markup) alla rappresentazione di concetti (l'ontologia) che trasformano il testo in una base di conoscenza.
+   p Il passaggio dall'elemento marcato alla classe a cui un'entità può afferire, consente una generalizzazione del dominio semantico di appartenenza. La costruzione di relazioni fra le classi permette di realizzare un modello astratto su cui basare il recupero di informazioni sotto forma di dati semi-strutturati. Si potrà interrogare la mia edizione alla ricerca di concetti: chi è il possessore di un certo manoscritto?
+   p Ma un'edizione non è conoscenza fino a quando rimane isolata ('siloed') e fino a quando non è in grado di dialogare con altre edizioni. Due sono quindi gli aspetti che ci interessano. Come trasformare l'edizione in un sistema interoperabile e come far dialogare l'edizione con il Web.
+   p Scegliere predicati ontologici ad hoc per il tipo di progetto limita l'interoperabilità. Per garantire massimo interscambio dell'edizione, sono state riusate le principali ontologie esistenti nel dominio umanistico (in particolare dell'editoria). DCterms, le SPAR Ontologies e HiCO sono alcune fra le ontologie che si stanno studiando per stabilire forme di dialogo e di condivisione.
+   p Ma l'informazione interna, rappresentata attraverso il markup, e l'informazione esterna, rappresentata attraverso RDF, devono poter dialogare anche con il mondo del Web. Se infatti persone, codici e lessico intrattengono relazioni interne al documento sono inevitabilmente anche in relazione con quanto è necessario per approfondire le istanze di ciascuna di queste categorie.
+   p Sono quindi in fase di analisi possibili estensioni degli elementi delle descrizione e delle loro relazioni. Andranno stabilite relazioni fra l'URI interno al progetto e altri URI esistenti in altri progetti.
+   p Nell'ambito del Web semantico, un ruolo importante ormai da alcuni anni lo hanno assunto i Linked Open Data, come progetto e strumento per la gestione di collegamenti fra risorse eterogenee. Molti linked datasets sono già disponibili e possono di conseguenza essere utilizzati in ogni progetto, cioè richiamati al fine di associare istanze dello stesso concetto. Molti URI di risorse e molte asserzioni RDF sono quindi a disposizione della comunità, con lo scopo di favorire il dialogo e lo scambio fra progetti. Rappresentare le informazioni relative alle edizioni utilizzando il meccanismo degli URI e le modalità espressive di RDF significa contribuire a popolare l'universo dei linked data sets, in una prospettiva di interscambio e interoperabilità.
+   p L'edizione digitale diventa quindi una base di conoscenza che permette all'utente finale di reperire informazioni strutturate. Le relazioni latenti sono definite in modo formale, diventando oggetto di query.
+   p I commenti, che l'editore mette tradizionalmente in nota, sono espressi tramite RDF e predicati ontologici. Ogni elemento annotato è identificato in modo univoco. L'edizione digitale così realizzata entra in un processo di dialogo con altre risorse digitali correlate.
+   p L'obiettivo della creazione di una base di conoscenza è duplice: da un lato garantisce l'interoperabilità dell'edizione, aperta allo scambio con altri dataset; dall'altro dà agli studiosi uno strumento (liste di autorità espresse in modo formale e accessibili tramite URI) e un metodo (dal contenuto delle lettere all'informazione esterna e dalle informazioni esterne al testo) che possono essere utilizzati in situazioni e contesti diversi.
+  section.dropDown
+   h3 Contributi critici sul tema
+   p Barbera M., Meschini F., Morbidoni C., Tomasi F., Annotating digital libraries and electronic editions in a collaborative and semantic perspective, in Proceedings of the 8th Italian Research Conference on Digital Libraries (IRCDL 2012) - Revised Selected Papers. Communications in Computer and Information Science (CCIS) 354, Heidelberg, Germany, Springer, 2012, pp. 45-56.
+   p F. Tomasi. Digital editions between embedded markup and external representation. A case study: Vespasiano da Bisticci's Letters, in Dall'Informatica umanistica alle culture digitali, a cura di G. Crupi, F. Ciotti. Atti del convegno in memoria di Giuseppe Gigliozzi (Roma, 27-28 ottobre 2011), Quaderni Digilab. II, Sapienza Università Editrice, Roma, 2012, pp. 201-218.
+   p F. Tomasi. L'edizione digitale e la rappresentazione della conoscenza. Un esempio: Vespasiano da Bisticci e le sue lettere, «Ecdotica» 2012, 9 (2013), pp. 264-286.
+   p F. Tomasi. Le edizioni digitali come nuovo modello per dati d'autorità concettuali, «JLIS.it» 4.2 (2013).
